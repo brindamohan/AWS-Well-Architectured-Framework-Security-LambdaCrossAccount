@@ -1,0 +1,21 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1565731301209",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::mybmbubket1",
+            "Principal": {
+                "AWS":"arn:aws:iam::123456:role/Lambda-List-S3-Role"
+            },
+            "Condition": {
+                "StringLike": {
+                    "aws:UserAgent": "*AWS_Lambda_python*"
+                }
+            }
+        }
+    ]
+}
